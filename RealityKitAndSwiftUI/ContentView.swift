@@ -9,30 +9,52 @@ import SwiftUI
 import RealityKit
 
 struct ContentView : View {
+    @EnvironmentObject var data : DataModel
+    @Environment(\.horizontalSizeClass) var hSizeClass
+    @Environment(\.verticalSizeClass) var vSizeClass
     var body: some View {
-        return ARViewContainer().edgesIgnoringSafeArea(.all)
+        
+        if hSizeClass == .compact && vSizeClass == .regular { // these defines a Vertical orientation
+        VStack {
+            if data.enabled {
+                ArDisplayView()
+            }else{Spacer()}
+        VStack {
+            Toggle(isOn: $data.enabled) {
+                Text("AR")
+            }
+            Stepper("X: \(data.xTranslation)", value: $data.xTranslation, in: -100...100)
+            Stepper("Y: \(data.yTranslation)", value: $data.yTranslation, in: -100...100)
+            Stepper("Z: \(data.zTranslation)", value: $data.zTranslation, in: -100...100)
+            
+        }.frame(height :200)
+                .padding(.all)
+
+        }
+        }else {
+            HStack {
+                if data.enabled {
+                    ArDisplayView()
+                }else{
+                    Spacer()
+                }
+            VStack {
+                Toggle(isOn: $data.enabled) {
+                    Text("AR")
+                }
+                Stepper("X: \(data.xTranslation)", value: $data.xTranslation, in: -100...100)
+                Stepper("Y: \(data.yTranslation)", value: $data.yTranslation, in: -100...100)
+                Stepper("Z: \(data.zTranslation)", value: $data.zTranslation, in: -100...100)
+                
+            }.frame(width:200)
+                    .padding(.all)
+
+            }
+        }
     }
 }
 
-struct ARViewContainer: UIViewRepresentable {
-    
-    func makeUIView(context: Context) -> ARView {
-        
-        let arView = ARView(frame: .zero)
-        
-        // Load the "Box" scene from the "Experience" Reality File
-        let boxAnchor = try! Experience.loadBox()
-        
-        // Add the box anchor to the scene
-        arView.scene.anchors.append(boxAnchor)
-        
-        return arView
-        
-    }
-    
-    func updateUIView(_ uiView: ARView, context: Context) {}
-    
-}
+
 
 #if DEBUG
 struct ContentView_Previews : PreviewProvider {
@@ -41,3 +63,5 @@ struct ContentView_Previews : PreviewProvider {
     }
 }
 #endif
+
+

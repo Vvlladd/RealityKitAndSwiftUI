@@ -15,6 +15,8 @@
 		DBB616B32796DC6400738E46 /* RealityKitAndSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB616B22796DC6400738E46 /* RealityKitAndSwiftUITests.swift */; };
 		DBB616BD2796DC6400738E46 /* RealityKitAndSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB616BC2796DC6400738E46 /* RealityKitAndSwiftUIUITests.swift */; };
 		DBB616BF2796DC6400738E46 /* RealityKitAndSwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB616BE2796DC6400738E46 /* RealityKitAndSwiftUIUITestsLaunchTests.swift */; };
+		DBB616CC2796E25D00738E46 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB616CB2796E25D00738E46 /* DataModel.swift */; };
+		DBB616CE279709C200738E46 /* ArDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB616CD279709C200738E46 /* ArDisplayView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		DBB616B82796DC6400738E46 /* RealityKitAndSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RealityKitAndSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBB616BC2796DC6400738E46 /* RealityKitAndSwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealityKitAndSwiftUIUITests.swift; sourceTree = "<group>"; };
 		DBB616BE2796DC6400738E46 /* RealityKitAndSwiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealityKitAndSwiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DBB616CB2796E25D00738E46 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		DBB616CD279709C200738E46 /* ArDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArDisplayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,8 @@
 			children = (
 				DBB6169F2796DC5C00738E46 /* AppDelegate.swift */,
 				DBB616A12796DC5C00738E46 /* ContentView.swift */,
+				DBB616CD279709C200738E46 /* ArDisplayView.swift */,
+				DBB616CB2796E25D00738E46 /* DataModel.swift */,
 				DBB616A32796DC5C00738E46 /* Experience.rcproject */,
 				DBB616A52796DC6300738E46 /* Assets.xcassets */,
 				DBB616A72796DC6300738E46 /* Preview Content */,
@@ -261,7 +267,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBB616A22796DC5C00738E46 /* ContentView.swift in Sources */,
+				DBB616CC2796E25D00738E46 /* DataModel.swift in Sources */,
 				DBB616A02796DC5C00738E46 /* AppDelegate.swift in Sources */,
+				DBB616CE279709C200738E46 /* ArDisplayView.swift in Sources */,
 				DBB616A42796DC5C00738E46 /* Experience.rcproject in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -442,7 +450,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -473,7 +481,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

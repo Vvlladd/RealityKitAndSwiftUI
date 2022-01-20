@@ -6,11 +6,24 @@
 //
 
 import SwiftUI
+import RealityKit
 
 struct ArDisplayView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        return ARViewContainer().edgesIgnoringSafeArea(.all)
     }
+}
+
+
+struct ARViewContainer: UIViewRepresentable {
+    
+    func makeUIView(context: Context) -> ARView {
+        return DataModel.shared.arView
+        
+    }
+    
+    func updateUIView(_ uiView: ARView, context: Context) {}
+    
 }
 
 struct ArDisplayView_Previews: PreviewProvider {
