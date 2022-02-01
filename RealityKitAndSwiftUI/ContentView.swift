@@ -18,14 +18,22 @@ struct ContentView : View {
         VStack {
             if data.enabled {
                 ArDisplayView()
-            }else{Spacer()}
+            }else{
+                Spacer()
+                Text ("Enable Camera").font(.largeTitle)
+                Spacer()
+            }
         VStack {
             Toggle(isOn: $data.enabled) {
                 Text("AR")
             }
+            ScrollView{
             Stepper("X: \(data.xTranslation)", value: $data.xTranslation, in: -100...100)
             Stepper("Y: \(data.yTranslation)", value: $data.yTranslation, in: -100...100)
             Stepper("Z: \(data.zTranslation)", value: $data.zTranslation, in: -100...100)
+            Stepper("RotationX:", value: $data.rotationOnX, in: -100...100)
+            Stepper("RotattionZ:", value: $data.rotationOnZ, in: -100...100)
+            }
             
         }.frame(height :200)
                 .padding(.all)
@@ -37,15 +45,20 @@ struct ContentView : View {
                     ArDisplayView()
                 }else{
                     Spacer()
+                    Text ("Enable Camera").font(.largeTitle)
+                    Spacer()
                 }
             VStack {
                 Toggle(isOn: $data.enabled) {
                     Text("AR")
                 }
+                ScrollView{
                 Stepper("X: \(data.xTranslation)", value: $data.xTranslation, in: -100...100)
                 Stepper("Y: \(data.yTranslation)", value: $data.yTranslation, in: -100...100)
                 Stepper("Z: \(data.zTranslation)", value: $data.zTranslation, in: -100...100)
-                
+                Stepper("RotationX:", value: $data.rotationOnX, in: -100...100)
+                Stepper("RotattionZ:", value: $data.rotationOnZ, in: -100...100)
+                }
             }.frame(width:200)
                     .padding(.all)
 

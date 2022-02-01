@@ -24,21 +24,23 @@
                   "4A213441-135C-450E-8EF8-1A4EAB267C1D" : null,
                   "7F5F1ADC-E5E4-4EF5-A5B5-FC43B071FFA5" : null,
                   "632E476F-1E55-4E30-9723-1C51DD2E8B89" : null,
-                  "96069EC0-7788-4318-A82D-05EAFBA6A196" : {
+                  "96069EC0-7788-4318-A82D-05EAFBA6A196" : null,
+                  "B91C7CA3-4AB1-4253-9A84-07383168A8A8" : null,
+                  "E572D737-8357-4184-901B-AB9D47B73B2B" : {
                     "overrides" : {
                       "arguments" : [
                         [
                           "material",
                           {
                             "typeName" : "String",
-                            "value" : "rubber"
+                            "value" : "aluminumBlasted"
                           }
                         ],
                         [
                           "type",
                           {
                             "typeName" : "String",
-                            "value" : "sphere"
+                            "value" : "cone"
                           }
                         ]
                       ],
@@ -51,14 +53,14 @@
                           "RuntimeIdentifier",
                           {
                             "typeName" : "UUID",
-                            "value" : "2A05E185-2433-4CB8-B7ED-49A45E44B7D7"
+                            "value" : "D76151DB-E5AF-4464-8986-296BAC86C313"
                           }
                         ],
                         [
                           "entityName",
                           {
                             "typeName" : "String",
-                            "value" : "rubberBall"
+                            "value" : "pyramid"
                           }
                         ],
                         [
@@ -96,14 +98,13 @@
                         0,
                         1,
                         0,
-                        0.00122804194688797,
-                        0.049999993294477463,
-                        0.023001505061984062,
+                        0,
+                        0,
+                        0,
                         1
                       ]
                     }
-                  },
-                  "B91C7CA3-4AB1-4253-9A84-07383168A8A8" : null
+                  }
                 },
                 "factory" : null,
                 "runtimeAttributes" : [
@@ -117,7 +118,7 @@
                 ]
               },
               "physicsMode" : "grid",
-              "title" : "Ball",
+              "title" : "Box",
               "viewTransform" : {
                 "cameraTransform" : [
                   0.99999994039535522,

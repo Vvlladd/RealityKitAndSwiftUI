@@ -29,10 +29,22 @@ final class DataModel : ObservableObject {
         didSet{translateObject()}
     }
     
+    @Published var rotationOnX : Float = 0.00{
+        didSet{
+            rotateObjectOnXaxis()
+        }
+    }
+
+    @Published var rotationOnZ : Float = 0.00{
+        didSet{
+            rotateObjectOnZaxis()
+        }
+    }
+    
     init () {
         arView = ARView(frame: .zero)
         //Add the scene from Experience Reality Composer file
-        let boxAnchor = try! Experience.loadBall()
+        let boxAnchor = try! Experience.loadBox()
         //Add the anchor to the scene
         arView.scene.anchors.append(boxAnchor)
         
@@ -40,7 +52,7 @@ final class DataModel : ObservableObject {
     
     func translateObject() {
         //Try to find object Entity
-        if let object = (arView.scene.anchors[0] as? Experience.Ball)?.rubberBall{
+        if let object = (arView.scene.anchors[0] as? Experience.Box)?.pyramid{
             //Transform floats in metres
             let xTrasnlationM = xTranslation / 100
             let yTranslationM = yTranslation / 100
@@ -53,6 +65,28 @@ final class DataModel : ObservableObject {
         
     }
     
+    func rotateObjectOnXaxis() {
+        if let object = (arView.scene.anchors[0] as? Experience.Box)?.pyramid{
 
+            let quaternion = simd_quatf( angle: degreeToRadians(degrees: rotationOnX * -90), axis: simd_float3(x: 1, y: 0, z: 0))
+            object.transform.rotation = quaternion
+
+        }
+    }
     
+    func rotateObjectOnZaxis() {
+        if let object = (arView.scene.anchors[0] as? Experience.Box)?.pyramid{
+
+            let quaternion = simd_quatf( angle: degreeToRadians(degrees: rotationOnZ * -90), axis: simd_float3(x: 0, y: 0, z: 1))
+            object.transform.rotation = quaternion
+        }
+    }   
+}
+
+
+extension DataModel {
+    func degreeToRadians(degrees: Float) -> Float {
+        return degrees * .pi / 180
+        
+    }
 }
